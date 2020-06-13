@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block breadcrumb %}
+  <li class="breadcrumb-item active">Menu De mon Resto</li>
+{% endblock %}
+
+{% block content %}
+  <table class="table">
+    <thead class="thead-inverse">
+      <tr>
+          <th>Menu</th>
+          <th>Type</th>
+          <th>description</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for menu in menus %}s
+        <tr>
+            <td>
+              <a href="{% url 'menus_product' menu.pk %}">{{ menu.nom }}</a>
+                <small class="text-muted d-block">{{ menu.description }}</small>
+            </td>
+            <td class="align-middle">0</td>
+            <td class="align-middle">0</td>
+			
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
+
+
